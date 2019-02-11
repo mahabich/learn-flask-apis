@@ -15,7 +15,13 @@ class LikeButton extends React.Component {
 
     return e(
       'button',
-      { onClick: () => this.setState({ liked: true }) },
+      { onClick: () =>
+        {
+          this.setState({ liked: true })
+          axios.get('http://localhost:5000/todo/api/v1.0/tasks')
+            .then(response => console.log(response))
+        }
+      },
       'Like'
     );
   }
