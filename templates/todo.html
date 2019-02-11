@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <title>Flask React</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Flask React</h1>
-      <br>
-      <div id="like_button_container"></div>
-    </div>
-    <!-- scripts -->
-    <script src="{{ url_for('static', filename='lib/react.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/react-dom.js') }}"></script>
+
+    <h2>Add React in One Minute</h2>
+    <p>This page demonstrates using React with no build tooling.</p>
+    <p>React is loaded as a script tag.</p>
+
+    <!-- We will put our React component inside this div. -->
+    <div id="like_button_container"></div>
+
+    <!-- Load React. -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
     <script src="{{ url_for('static', filename='scripts/todo.js') }}"></script>
+
   </body>
 </html>
