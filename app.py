@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, abort, make_response, request
+from flask import Flask, jsonify, abort, make_response, request, render_template
 
 app = Flask(__name__)
 
@@ -16,6 +16,14 @@ tasks = [
         'done': False
     }
 ]
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/hello')
+def hello():
+    return render_template('hello.html')
 
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def get_tasks():
