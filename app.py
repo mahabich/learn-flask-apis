@@ -25,6 +25,10 @@ def index():
 def hello():
     return render_template('hello.html')
 
+@app.route('/todo')
+def todo():
+    return render_template('todo.html')
+
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': tasks})

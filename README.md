@@ -28,12 +28,16 @@ https://hackernoon.com/tutorial-how-to-make-http-requests-in-react-part-1-f7afa3
 Start with the codebase from Step 3.
 
 Implement a React frontend inside your Flask app using the code from Step 4.
+* Remove the tutorial's dependencies on bower, etc.
+* Make sure to successfully merge the relevant python code from Step 4 into the Step 3 codebase.
+* You should now be able to both hit the backend with curl and to also view HTML in a browser.
 
-Refer to Step 5 in order to figure out how to call your Flask API from React.
+Now, design a basic React frontend that allows you to view and delete To-Do items (note that the DELETE request is not provided in the tutorial).
+* Create a fresh HTML page and .js file following the directory structure of the existing files, but using the simple React tutorial found here: https://reactjs.org/docs/add-react-to-a-website.html
+* Refer to Step 5 in order to figure out how to call your Flask API from React.
 
-Build a basic React frontend that allows you to view and delete To-Do items (note that the DELETE request is not provided in the tutorial).
 
-##### Useful Commands
+##### Some Useful Copy-Pasta
 
 python -m venv venv
 
