@@ -31,7 +31,7 @@ Implement a React frontend inside your Flask app using the code from Step 4.
 
 Refer to Step 5 in order to figure out how to call your Flask API from React.
 
-Build a basic React frontend that allows you to view and add To-Do items.
+Build a basic React frontend that allows you to view and delete To-Do items (note that the DELETE request is not provided in the tutorial).
 
 ##### Useful Commands
 
@@ -42,3 +42,6 @@ pip install flask
 python app.py
 
 curl -i http://localhost:5000/todo/api/v1.0/tasks
+curl -i http://localhost:5000/todo/api/v1.0/tasks/1
+curl -i -H "Content-Type: application/json" -X POST -d "{\"title\":\"Read a book\"}" http://localhost:5000/todo/api/v1.0/tasks
+curl -i -H "Content-Type: application/json" -X PUT -d "{\"done\":true}" http://localhost:5000/todo/api/v1.0/tasks/2
