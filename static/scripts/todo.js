@@ -2,6 +2,8 @@
 
 const e = React.createElement;
 
+var todos = null;
+
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
@@ -9,8 +11,8 @@ class LikeButton extends React.Component {
   }
 
   render() {
-    if (this.state.liked) {
-      return 'You liked this.';
+    if (todos !== null) {
+      return JSON.stringify(todos);
     }
 
     return e(
@@ -19,10 +21,10 @@ class LikeButton extends React.Component {
         {
           this.setState({ liked: true })
           axios.get('http://localhost:5000/todo/api/v1.0/tasks')
-            .then(response => console.log(response))
+            .then(response => todos = response.data.tasks)
         }
       },
-      'Like'
+      'Show To Do Items'
     );
   }
 }
